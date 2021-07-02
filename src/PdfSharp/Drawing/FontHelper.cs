@@ -23,7 +23,7 @@
 // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
 // THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 #endregion
 
@@ -169,7 +169,8 @@ namespace PdfSharp.Drawing
             //typeface = s_typefaces[0];
 
             // BUG: does not work with fonts that have others than the four default styles
-            FormattedText formattedText = new FormattedText(text, new CultureInfo("en-us"), FlowDirection.LeftToRight, typeface, emSize, brush);
+            // TODO: 1.0 is given as PixelsPerDip parameter, seems to work with PDF generation currently
+            FormattedText formattedText = new FormattedText(text, new CultureInfo("en-us"), FlowDirection.LeftToRight, typeface, emSize, brush, 1.0);
             // .NET 4.0 feature new NumberSubstitution(), TextFormattingMode.Display);
             //formattedText.SetFontWeight(FontWeights.Bold);
             //formattedText.SetFontStyle(FontStyles.Oblique);
